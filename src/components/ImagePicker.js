@@ -4,7 +4,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 const GetImage = ({ onImageSelected }) => {
     const [image, setImage] = useState(null);
-    
+
     const pickImage = async (fromCamera) => {
         let result;
         if (fromCamera) {
@@ -29,6 +29,11 @@ const GetImage = ({ onImageSelected }) => {
         }
     };
 
+    const resetImage = () => {
+        setImage(null);
+        onImageSelected(null);
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.buttonContainer}>
@@ -36,6 +41,7 @@ const GetImage = ({ onImageSelected }) => {
                 <Button title="Select from camera roll" onPress={() => pickImage(false)} />
             </View>
             {image && <Image source={{ uri: image }} style={styles.image} />}
+            {image && <Button title="Reset image" onPress={resetImage} />}
         </View>
     );
 };
@@ -60,4 +66,5 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
 });
+
 export default GetImage;
