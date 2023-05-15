@@ -9,10 +9,29 @@
       ]
     ],
     "scheme": "acme",
-    "web": {
-      "bundler": "metro"
-    },
     "name": "brief_react",
-    "slug": "brief_react"
+    "slug": "brief_react",
+    "discription": "react_app_alert",
+    "privacy": "public",
+    "android": {
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.anonymous.brief_react"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2d7d162d-5224-4863-b469-6334c695361f"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "dinya"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2d7d162d-5224-4863-b469-6334c695361f"
+    }
   }
 }
